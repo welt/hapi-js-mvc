@@ -1,14 +1,14 @@
 import Moment from 'moment';
 
-export default function Note(sequelize, DataTypes) {
+export default function Note(sequelize, Sequelize) {
   return sequelize.define('Note', {
     date: {
-      type: DataTypes.DATE,
+      type: Sequelize.DATE,
       get: () => Moment(this.getDataValue('date')).format('MMMM Do, YYYY'),
     },
-    title: DataTypes.STRING,
-    slug: DataTypes.STRING,
-    description: DataTypes.STRING,
-    content: DataTypes.STRING,
+    title: Sequelize.STRING,
+    slug: Sequelize.STRING,
+    description: Sequelize.STRING,
+    content: Sequelize.STRING,
   });
 }
