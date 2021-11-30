@@ -1,9 +1,13 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
+import Home from '../controllers/home.mjs';
+import Note from '../controllers/note.mjs';
+
 const routes = [
   {
     method: 'GET',
     path: '/',
-    handler: (_request, _h) => 'All the notes will appear here',
+    handler: Home,
     config: {
       description: 'Gets all the notes available',
     },
@@ -11,15 +15,18 @@ const routes = [
   {
     method: 'POST',
     path: '/note',
-    handler: (_request, _h) => 'New note',
+    handler: Note.create,
     config: {
       description: 'Adds a new note',
+      payload: {
+        multipart: true,
+      },
     },
   },
   {
     method: 'GET',
     path: '/note/{slug}',
-    handler: (_request, _h) => 'This is a note',
+    handler: Note.read,
     config: {
       description: 'Gets the content of a note',
     },
@@ -27,15 +34,18 @@ const routes = [
   {
     method: 'PUT',
     path: '/note/{slug}',
-    handler: (_request, _h) => 'Edit a note',
+    handler: Note.update,
     config: {
       description: 'Updates the selected note',
+      payload: {
+        multipart: true,
+      },
     },
   },
   {
     method: 'GET',
     path: '/note/{slug}/delete',
-    handler: (_request, _h) => 'This note no longer exists',
+    handler: Note.delete,
     config: {
       description: 'Deletes the selected note',
     },
