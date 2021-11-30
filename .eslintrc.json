@@ -1,0 +1,29 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "window": true
+  },
+  "extends": "airbnb-base",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "rules": {
+    "import/extensions": [
+      "warn",
+      "never",
+      {
+        "ignorePackages": true
+      }
+    ],
+    "no-restricted-globals": [
+      "warn"
+    ]
+  }
+}
