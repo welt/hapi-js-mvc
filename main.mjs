@@ -1,24 +1,17 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 import Hapi from '@hapi/hapi';
+import settings from './src/conf/settings.mjs';
+import Routes from './src/lib/routes.mjs';
+import Models from './src/models/index.mjs';
 
 const init = async () => {
-  const server = Hapi.server({
-    port: 3000,
-    host: 'localhost',
-  });
+  const server = Hapi.server(settings.server);
 
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: (_request, _h) => 'Hello World!',
-  });
+  server.route(Routes);
 
-  server.route({
-    method: ['PUT', 'POST'],
-    path: '/',
-    handler: (_request, _h) => 'I did something!',
-  });
+  await Models.sequelize.sync();
 
   await server.start();
 
