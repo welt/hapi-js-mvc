@@ -8,7 +8,7 @@ import Hapi from '@hapi/hapi';
 import Vision from '@hapi/vision';
 import Handlebars from 'handlebars';
 import settings from './src/conf/settings.mjs';
-import Routes from './src/lib/routes.mjs';
+import Routes from './src/routes/index.mjs';
 import Models from './src/models/index.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
