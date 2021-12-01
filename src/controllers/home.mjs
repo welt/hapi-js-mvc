@@ -7,6 +7,10 @@ export default class Home {
     const result = await Models.Note.findAll({
       order: [['date', 'DESC']],
     });
-    return h.view('index', { Notes: result });
+    return h.view('home', {
+      Notes: result,
+      page: 'Home — Notes Board',
+      description: 'Welcome to my Notes Board',
+    });
   }
 }

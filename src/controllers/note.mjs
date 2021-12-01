@@ -7,6 +7,7 @@ const note = Models.Note;
 
 export default class Note {
   static async create(request, _h) {
+    console.log('request ', request);
     return note.create({
       date: new Date(),
       title: request.payload.noteTitle,

@@ -1,0 +1,22 @@
+<section>
+  <h1>Notes Board</h1>
+  <div class="tabs">
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="#" class="show-modal">Update</a>
+      </li>
+      <li>
+        <a href="/note/{{note.slug}}/delete" class="show-modal">Delete</a>
+      </li>
+    </ul>
+  </div>
+  <main class="notes-list">
+    {{#each Notes}}
+      {{> note}}
+      <hr>
+    {{/each}}
+  </main>
+{{> modalEdit }}

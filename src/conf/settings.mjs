@@ -1,4 +1,11 @@
+/* eslint-disable no-underscore-dangle */
 import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import * as path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 dotenv.config();
 
@@ -6,6 +13,11 @@ const settings = {
   server: {
     host: process.env.HOST || 'localhost',
     port: process.env.PORT || 3000,
+    routes: {
+      files: {
+        relativeTo: path.join(__dirname, '../static/public'),
+      },
+    },
   },
   db: {
     host: process.env.DATABASE_HOST || 'localhost',

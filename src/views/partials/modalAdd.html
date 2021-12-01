@@ -1,0 +1,36 @@
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Add note...</p>
+      <button class="delete" aria-label="close">Close</button>
+    </header>
+    <section class="modal-card-body">
+      <form action="/note" method="POST" class="note-form" id="note-form">
+        <fieldset>
+          <legend>Note editor</legend>
+          <div class="field">
+            <div class="control">
+              <input name="noteTitle" type="text" placeholder="Title" />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <input name="noteDescription" type="text" placeholder="Short description" />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <input name="noteContent" type="text" placeholder="Contents" />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button class="is-link">Save</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </div>
+</div>

@@ -1,7 +1,14 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import * as path from 'path';
 import Home from '../controllers/home.mjs';
-// import Note from '../controllers/note.mjs';
+import Note from '../controllers/note.mjs';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const routes = [
   {
@@ -15,15 +22,18 @@ const routes = [
   {
     method: 'POST',
     path: '/note',
-    handler: (_request, _h) => 'New note',
+    handler: Note.create,
     config: {
       description: 'Adds a new note',
+      payload: {
+        multipart: true,
+      },
     },
   },
   {
     method: 'GET',
     path: '/note/{slug}',
-    handler: (_request, _h) => 'This is a note',
+    handler: Note.read,
     config: {
       description: 'Gets the content of a note',
     },
@@ -31,17 +41,32 @@ const routes = [
   {
     method: 'PUT',
     path: '/note/{slug}',
-    handler: (_request, _h) => 'Edit a note',
+    handler: Note.update,
     config: {
       description: 'Updates the selected note',
+      payload: {
+        multipart: true,
+      },
     },
   },
   {
     method: 'GET',
     path: '/note/{slug}/delete',
-    handler: (_request, _h) => 'This note no longer exists',
+    handler: Note.delete,
     config: {
       description: 'Deletes the selected note',
+    },
+  },
+  {
+    method: 'GET',
+    path: '/{param*}',
+    handler: {
+      directory: {
+        path: path.join(__dirname, '../static/public'),
+      },
+    },
+    config: {
+      description: 'Provides static resources',
     },
   },
 ];

@@ -5,6 +5,7 @@
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import Hapi from '@hapi/hapi';
+import Inert from '@hapi/inert';
 import Vision from '@hapi/vision';
 import Handlebars from 'handlebars';
 import settings from './src/conf/settings.mjs';
@@ -18,6 +19,7 @@ const init = async () => {
   const server = Hapi.server(settings.server);
 
   await server.register(Vision);
+  await server.register(Inert);
 
   server.route(Routes);
 

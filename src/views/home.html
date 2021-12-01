@@ -1,0 +1,16 @@
+<section>
+  <h1>Notes Board</h1>
+  <div class="tabs">
+    <ul>
+      <li>
+        <a class="show-modal">Publish a note...</a>
+      </li>
+    </ul>
+  </div>
+  <main class="notes-list">
+    {{#each Notes}}
+      {{> note }}
+      <hr>
+    {{/each}}
+  </main>
+{{> modalAdd }}
