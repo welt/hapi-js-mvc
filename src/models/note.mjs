@@ -3,7 +3,7 @@ import Moment from 'moment';
 export default function Note(sequelize, Sequelize) {
   return sequelize.define('Note', {
     date: {
-      type: Sequelize.DATE,
+      type: Sequelize.DATEONLY,
       get: () => Moment(this.getDataValue('date')).format('MMMM Do, YYYY'),
     },
     title: Sequelize.STRING,

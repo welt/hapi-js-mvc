@@ -17,6 +17,7 @@ export default class Note {
   }
 
   static async read(request, _h) {
+    console.log(request);
     return note.findOne({
       where: {
         slug: request.params.slug,

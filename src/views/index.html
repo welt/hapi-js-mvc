@@ -1,0 +1,7 @@
+{{#each Notes}}
+<article>
+  <h2><a href="/note/{{this.dataValues.slug}}">{{this.dataValues.title}}</a></h2>
+  <p class="subtitle">Published on {{this.dataValues.date}}</p>
+  <p class="content">{{this.dataValues.content}}</p>
+</article>
+{{/each}}
