@@ -1,5 +1,7 @@
 # TO DO
 
++ HTML escaping with @hapi/hoek
+
 + try Objection JS ORM
 
 + image uploads
