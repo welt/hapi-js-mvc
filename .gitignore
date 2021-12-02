@@ -79,6 +79,9 @@ $RECYCLE.BIN/
 *.sqlite
 *.sqlite3
 
+# Project database dev queries.
+!mysql/**/*.sql
+
 
 ############################
 # Misc.
