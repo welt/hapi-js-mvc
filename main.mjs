@@ -34,7 +34,7 @@ const init = async () => {
     layoutPath: 'src/views/layout',
     layout: 'default',
     partialsPath: 'src/views/partials',
-    // helpersPath: '/src/views/helpers',
+    helpersPath: 'src/views/helpers',
   });
 
   await server.start();
