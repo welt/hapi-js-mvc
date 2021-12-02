@@ -21,6 +21,10 @@ https://akhromieiev.com/tutorials/using-handlebars-with-hapi/
 
 https://futurestud.io/tutorials/how-to-create-and-use-handlebars-partial-views-with-hapi
 
++ Hapi & S3 uploads
+
+https://medium.com/@singhpratik17/uploading-files-to-s3-using-hapi-and-aws-sdk-8965bdc0737a
+
 + Sequelize ORM
 
 https://sequelize.org
