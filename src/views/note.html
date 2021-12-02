@@ -9,7 +9,7 @@
         <a href="#" class="show-modal">Update</a>
       </li>
       <li>
-        <a href="/note/{{Note.slug}}/delete" class="show-modal">Delete</a>
+        <a href="/note/{{Note.dataValues.slug}}/delete" class="show-modal">Delete</a>
       </li>
     </ul>
   </div>
@@ -17,7 +17,7 @@
   <hr>
   <main class="notes-list">
     {{#each Notes}}
-      {{> note}}
+    {{> note}}
     {{/each}}
   </main>
 </section>
