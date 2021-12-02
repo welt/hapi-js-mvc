@@ -26,7 +26,7 @@ export default class Note {
       order: [['date', 'DESC']],
     });
     return h.view('note', {
-      Note: singleNote,
+      Note: singleNote.dataValues,
       Notes: allNotes,
       page: 'Single Note',
       description: 'Look at this note',
