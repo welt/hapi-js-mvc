@@ -16,8 +16,10 @@
     "@hapi/vision": "^6.1.0",
     "dotenv": "^10.0.0",
     "handlebars": "^4.7.7",
+    "knex": "^0.95.14",
     "moment": "^2.29.1",
     "mysql2": "^2.3.3",
+    "objection": "^3.0.0",
     "sequelize": "^6.12.0-alpha.1",
     "slug": "^5.1.0"
   },
