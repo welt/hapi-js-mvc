@@ -21,6 +21,22 @@ https://akhromieiev.com/tutorials/using-handlebars-with-hapi/
 
 https://futurestud.io/tutorials/how-to-create-and-use-handlebars-partial-views-with-hapi
 
++ Sequelize ORM
+
+https://sequelize.org
+
++ Objection JS ORM
+
+https://vincit.github.io/objection.js/
+
 + Node MVC
 
 https://www.sitepoint.com/node-js-mvc-application/
+
++ Uploads? 
+
+https://scotch.io/bar-talk/handling-file-uploads-with-hapi-js
+
++ more Handlebars
+
+https://futurestud.io/tutorials/how-to-create-and-use-custom-handlebars-helpers-with-hapi
