@@ -7,7 +7,6 @@ const note = Models.Note;
 
 export default class Note {
   static async create(request, _h) {
-    console.log('request ', request);
     return note.create({
       date: new Date(),
       title: request.payload.noteTitle,
@@ -17,15 +16,24 @@ export default class Note {
     });
   }
 
-  static async read(request, _h) {
-    return note.findOne({
+  static async read(request, h) {
+    const singleNote = await note.findOne({
       where: {
         slug: request.params.slug,
       },
     });
+    const allNotes = await Models.Note.findAll({
+      order: [['date', 'DESC']],
+    });
+    return h.view('note', {
+      Note: singleNote,
+      Notes: allNotes,
+      page: 'Single Note',
+      description: 'Look at this note',
+    });
   }
 
-  static async update(request, _h) {
+  static async update(request, h) {
     const values = {
       title: request.payload.noteTitle,
       description: request.payload.noteDescription,
@@ -37,7 +45,11 @@ export default class Note {
       },
     };
     await note.update(values, options);
-    return note.findOne(options);
+    return h.view('note', {
+      Note: note.findOne(options),
+      page: 'Single Note',
+      description: 'Look at this note',
+    });
   }
 
   static async delete(request, h) {

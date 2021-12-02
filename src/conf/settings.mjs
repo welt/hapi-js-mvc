@@ -18,6 +18,10 @@ const settings = {
         relativeTo: path.join(__dirname, '../static/public'),
       },
     },
+    debug: {
+      log: ['hapi', 'error', 'debug', 'info', 'warning', 'request', 'server', 'timeout', 'internal', 'implementation', 'tail', 'remove', 'last', 'add'],
+      request: ['hapi', 'error', 'debug', 'info', 'warning', 'request', 'server', 'timeout', 'internal', 'implementation', 'tail', 'remove', 'last', 'add', 'received', 'handler', 'response'],
+    },
   },
   db: {
     host: process.env.DATABASE_HOST || 'localhost',

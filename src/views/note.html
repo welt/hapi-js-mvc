@@ -9,14 +9,16 @@
         <a href="#" class="show-modal">Update</a>
       </li>
       <li>
-        <a href="/note/{{note.slug}}/delete" class="show-modal">Delete</a>
+        <a href="/note/{{Note.slug}}/delete" class="show-modal">Delete</a>
       </li>
     </ul>
   </div>
+  {{> note Note}}
+  <hr>
   <main class="notes-list">
     {{#each Notes}}
       {{> note}}
-      <hr>
     {{/each}}
   </main>
+</section>
 {{> modalEdit }}
