@@ -44,3 +44,7 @@ https://scotch.io/bar-talk/handling-file-uploads-with-hapi-js
 + more Handlebars
 
 https://futurestud.io/tutorials/how-to-create-and-use-custom-handlebars-helpers-with-hapi
+
++ Hapi with Mongo
+
+https://lzomedia.com/blog/building-a-node-js-api-with-hapi-js-and-mongodb/
