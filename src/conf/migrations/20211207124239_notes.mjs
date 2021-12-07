@@ -4,8 +4,8 @@ export function up(knex, _Promise) {
     table.increments();
     table.string('title').notNullable();
     table.string('slug').notNullable();
-    table.string('description').notNullable();
-    table.string('content').notNullable();
+    table.text('description', 'longtext').notNullable();
+    table.text('content', 'longtext').notNullable();
     table.timestamp('date').defaultTo(knex.fn.now());
     table.timestamp('created_at').defaultTo(knex.fn.now());
     table.timestamp('updated_at').defaultTo(knex.fn.now());

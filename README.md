@@ -12,9 +12,17 @@
 
 ## Objection port
 
+### Knex cheatsheet
+
+[https://devhints.io/knex](https://devhints.io/knex)
+
 + migration command 
 
 `npx knex migrate:latest --knexfile=./src/conf/knexfile.mjs`
+
++ seeding command
+
+`npx knex seed:run --knexfile=./src/conf/knexfile.mjs`
 
 
 ---
