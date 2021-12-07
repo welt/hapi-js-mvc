@@ -8,6 +8,14 @@
 
 [Handlebars templating](https://handlebarsjs.com)
 
+---
+
+## Objection port
+
++ migration command 
+
+`npx knex migrate:latest --knexfile=./src/conf/knexfile.mjs`
+
 
 ---
 
