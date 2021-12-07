@@ -9,3 +9,9 @@
 + frontend build tasks
 
 + Custom Docker image / deployment
+
+---
+
+### Objection ToDo
+
++ refactor controllers with Objection CRUD cmds
