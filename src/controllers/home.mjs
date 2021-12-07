@@ -1,10 +1,10 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
-import Models from '../models/index.mjs';
+import note from '../models/note.mjs';
 
 export default class Home {
   static async read(_request, h) {
-    const result = await Models.Note.findAll({
+    const result = await note.findAll({
       order: [['date', 'DESC']],
     });
     return h.view('home', {
