@@ -1,14 +1,11 @@
-import Moment from 'moment';
+import { Model } from 'objection';
 
-export default function Note(sequelize, Sequelize) {
-  return sequelize.define('Note', {
-    date: {
-      type: Sequelize.DATEONLY,
-      get: () => Moment(this.getDataValue('date')).format('MMMM Do, YYYY'),
-    },
-    title: Sequelize.STRING,
-    slug: Sequelize.STRING,
-    description: Sequelize.STRING,
-    content: Sequelize.STRING,
-  });
+export default class Note extends Model {
+  static get tableName() {
+    return 'Notes';
+  }
+
+  static get idColumn() {
+    return 'id';
+  }
 }
