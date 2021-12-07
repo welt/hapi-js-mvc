@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /**
  * seed.js
  * Same as with the CommonJS modules
@@ -5,9 +6,9 @@
  */
 
 // eslint-disable-next-line no-unused-vars
-export default function seed(knex, _Promise) {
+export function seed(knex, _Promise) {
   return knex('Notes').del()
-    .then(() => knex('tasks').insert([
+    .then(() => knex('Notes').insert([
       {
         title: 'Vaccuum the floors',
         slug: 'vaccuum-the-floors',
