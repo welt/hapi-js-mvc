@@ -1,9 +1,7 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 import Slugify from 'slug';
-import Models from '../models/index.mjs';
-
-const note = Models.Note;
+import note from '../models/note.mjs';
 
 export default class Note {
   static async create(request, _h) {
@@ -22,7 +20,7 @@ export default class Note {
         slug: request.params.slug,
       },
     });
-    const allNotes = await Models.Note.findAll({
+    const allNotes = await note.findAll({
       order: [['date', 'DESC']],
     });
     return h.view('note', {
