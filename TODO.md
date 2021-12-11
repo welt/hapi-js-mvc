@@ -9,3 +9,5 @@
 + frontend build tasks
 
 + Custom Docker image / deployment
+
++ try Prisma ORM
